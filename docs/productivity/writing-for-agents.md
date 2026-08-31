@@ -55,6 +55,9 @@ Mostly no, and over-fitting to one model is its own trap. Updating for a new mod
 **My skill only works on the exact task I built it from.**
 The common route (do the work once, then have the agent write it up as a skill) over-indexes on that one run, and the exemplars come out too specific. Keep the run as evidence, then abstract deliberately: strip what belonged to that repo and those files, and write for the class of task.
 
+**Does an explicit-only skill's description become human-facing?**
+No. It remains agent-facing metadata, but the harness keeps it out of the model's ordinary context. It therefore needs a concise statement of the invoked job rather than automatic-selection trigger branches. Claude Code uses `disable-model-invocation: true`; Codex uses `policy.allow_implicit_invocation: false` in `agents/openai.yaml`.
+
 **English isn't my first language. Do I lose the leading-word advantage?**
 No. Finding the word that packs the most behaviour into the fewest [tokens](https://www.aihero.dev/ai-coding-dictionary/token) is work the reference does for you. It is one of the things it is for.
 
